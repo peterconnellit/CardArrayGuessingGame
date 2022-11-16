@@ -24,18 +24,21 @@ int main() {
     string card_name[] = { "Two",  "Three", "Four", "Five", "Six",
                           "Seven", "Eight", "Nine", "Ten",  "Jack",
                           "Queen", "King",  "Ace" };
+
     string suit[] = { "Hearts", "Diamonds", "Clubs", "Spades" };
 
     string tempName = card_name[rand() % currentCard_name];
     currentCard = tempName;
+    string* tempN = &tempName;
 
     string tempSuit = suit[rand() % currentSuit];
     currentSuit_name = tempSuit;
+    string* tempS = &tempSuit;
 
     cout << "Your score is = " << score << "\n";
 
     //The Cheat Answer printed to user
-    string card = tempName + " of " + tempSuit;
+    string card = *tempN + " of " + *tempS;
 
     cout << card << "\n";
 
